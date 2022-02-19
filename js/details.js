@@ -21,11 +21,8 @@ async function getSingleMovie() {
                                              </div>
                                            </div>
                                          </div>`
-
   } catch (error) {
     singleResultsContainer.innerHTML += displayError("error", error)
-
-
   } finally {
     document.querySelector(".loader").style.display = "none";
   }

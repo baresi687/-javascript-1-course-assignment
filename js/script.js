@@ -16,10 +16,8 @@ async function getMovies() {
                                       </div>
                                     </a>`
     }
-
   } catch (error) {
     resultContainer.innerHTML += displayError("error", error)
-
   } finally {
     document.querySelector(".loader").style.display = "none";
   }
