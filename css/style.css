@@ -1,5 +1,13 @@
 * {
-  font-family: Arial, sans-serif;
+  font-family: 'Karla', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 900px;
+  margin: 2em auto;
+  background-color: #202124;
+  color: #e8eaed;
 }
 
 .loader {
@@ -20,13 +28,23 @@
   }
 }
 
+h1 {
+  font-size: 3em;
+}
+
 a {
   text-decoration: none;
+  color: #8ab4f8;
 }
 
 a:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.contact {
+  margin: 20px 0;
+  display: block;
 }
 
 .movie-cards {
@@ -42,15 +60,15 @@ a:hover {
 }
 
 .movies {
-  width: 200px;
-  height: 150px;
-  background-color: lightsteelblue;
+  width: 293px;
+  height: 200px;
+  background-color: #303134;
   border-radius: 10px;
-  padding: 20px;
+  padding: 20px 30px 0 30px;
 }
 
 img {
-  width: 300px;
+  width: 30%;
 }
 
 .movie-description {

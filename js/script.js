@@ -8,8 +8,7 @@ async function getMovies() {
     const results = resultJSON.items;
 
     for (let i = 0; i <= 20; i++) {
-      resultContainer.innerHTML += `<h2>Click any card for more details</h2>
-                                    <a class="movie-cards" href="./details.html?id=${results[i].id}">
+      resultContainer.innerHTML += `<a class="movie-cards" href="./details.html?id=${results[i].id}">
                                       <div class="movies">
                                         <h3>${results[i].title}</h3>
                                         <p>Released: ${results[i].year}</p>
@@ -26,6 +25,4 @@ async function getMovies() {
   }
 }
 
-/*
-getMovies();
-*/
+/*getMovies();*/
