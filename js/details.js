@@ -16,8 +16,9 @@ async function getSingleMovie() {
                                            <div class="movie-description">
                                              <img src="${result.image}" alt="Movie poster"/>
                                              <div>
-                                               <p><b>Genre</b>: ${result.genres}</p>
-                                               <p>${result.plot}</p>
+                                               <p><span class="bold">Genre: </span>${result.genres}</p>
+                                               <p><span class="bold">Plot: </span>${result.plot}</p>
+                                               <p><span class="bold">Director: </span>${result.directors}</p>
                                              </div>
                                            </div>
                                          </div>`
@@ -28,4 +29,5 @@ async function getSingleMovie() {
   }
 }
 
-/*getSingleMovie();*/
+/*
+getSingleMovie();*/

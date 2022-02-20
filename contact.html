@@ -9,11 +9,35 @@
   <script src="./js/contact.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<a href="./"><< Back</a>
+<a class="back" href="./"><< Back</a>
 <h1>Contact form</h1>
+<form>
+  <div class="form-success">Form sent successfully</div>
+  <label>
+    Name
+    <input name="name" id="name" placeholder="Your name">
+  </label>
+  <div class="validation-error">Name is required</div>
+  <label>
+    Subject
+    <input name="subject" id="subject" placeholder="Subject">
+  </label>
+  <div class="validation-error">Not enough information</div>
+  <label>
+    Email
+    <input name="email" id="email" placeholder="Your email">
+  </label>
+  <div class="validation-error">Not a valid Email address</div>
+  <label>
+    Address
+    <input name="address" id="address" placeholder="Your Address">
+  </label>
+  <div class="validation-error">Address is too short</div>
+  <button>Submit</button>
+</form>
 </body>
 </html>

@@ -23,4 +23,5 @@ async function getMovies() {
   }
 }
 
-/*getMovies();*/
+/*
+getMovies();*/
