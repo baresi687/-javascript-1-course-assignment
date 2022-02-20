@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -17,27 +17,27 @@
 <h1>Contact form</h1>
 <form>
   <div class="form-success">Form sent successfully</div>
-  <label>
-    Name
+  <div class="input-name">
+    <label for="name">Name</label>
     <input name="name" id="name" placeholder="Your name">
-  </label>
-  <div class="validation-error">Name is required</div>
-  <label>
-    Subject
+    <div class="validation-error">Name is required</div>
+  </div>
+  <div class="input-subject">
+    <label for="subject">Subject</label>
     <input name="subject" id="subject" placeholder="Subject">
-  </label>
-  <div class="validation-error">Not enough information</div>
-  <label>
-    Email
+    <div class="validation-error">Not enough information</div>
+  </div>
+  <div class="input-email">
+    <label for="email">Email</label>
     <input name="email" id="email" placeholder="Your email">
-  </label>
-  <div class="validation-error">Not a valid Email address</div>
-  <label>
-    Address
-    <input name="address" id="address" placeholder="Your Address">
-  </label>
-  <div class="validation-error">Address is too short</div>
-  <button>Submit</button>
+    <div class="validation-error">Not a valid Email address</div>
+  </div>
+  <div class="input-address">
+    <label for="address">Address</label>
+    <input name="address" id="address" placeholder="Your address">
+    <div class="validation-error">Address is too short</div>
+  </div>
+  <button type="submit">Submit</button>
 </form>
 </body>
 </html>
