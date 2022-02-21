@@ -29,5 +29,4 @@ async function getSingleMovie() {
   }
 }
 
-/*
-getSingleMovie();*/
+getSingleMovie();

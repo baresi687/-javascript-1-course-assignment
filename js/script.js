@@ -7,7 +7,7 @@ async function getMovies() {
     const resultJSON = await response.json()
     const results = resultJSON.items;
 
-    for (let i = 0; i <= 20; i++) {
+    for (let i = 0; i < 20; i++) {
       resultContainer.innerHTML += `<a class="movie-cards" href="./details.html?id=${results[i].id}">
                                       <div class="movies">
                                         <h3>${results[i].title}</h3>
@@ -23,5 +23,4 @@ async function getMovies() {
   }
 }
 
-/*
-getMovies();*/
+getMovies();

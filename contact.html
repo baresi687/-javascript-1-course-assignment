@@ -6,6 +6,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Top IMDB movies</title>
+  <script src="./js/handlers/displayMessages.js" defer></script>
   <script src="./js/contact.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,28 +17,28 @@
 <a class="back" href="./"><< Back home</a>
 <h1>Contact form</h1>
 <form>
-  <div class="form-success">Form sent successfully</div>
+  <div class="success-container"></div>
   <div class="input-name">
     <label for="name">Name</label>
     <input name="name" id="name" placeholder="Your name">
-    <div class="validation-error">Name is required</div>
+    <div class="error-container"></div>
   </div>
   <div class="input-subject">
     <label for="subject">Subject</label>
     <input name="subject" id="subject" placeholder="Subject">
-    <div class="validation-error">Not enough information</div>
+    <div class="error-container"></div>
   </div>
   <div class="input-email">
     <label for="email">Email</label>
     <input name="email" id="email" placeholder="Your email">
-    <div class="validation-error">Not a valid Email address</div>
+    <div class="error-container"></div>
   </div>
   <div class="input-address">
     <label for="address">Address</label>
     <input name="address" id="address" placeholder="Your address">
-    <div class="validation-error">Address is too short</div>
+    <div class="error-container"></div>
   </div>
-  <button type="submit">Submit</button>
+  <button>Submit</button>
 </form>
 </body>
 </html>
