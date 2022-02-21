@@ -11,15 +11,6 @@ form.addEventListener("submit", function (event) {
   const emailErrorContainer = document.querySelector(".input-email .error-container");
   const addressErrorContainer = document.querySelector(".input-address .error-container");
 
-  name.onkeyup = () => {
-  };
-  subject.onkeyup = () => {
-  };
-  email.onkeyup = () => {
-  };
-  address.onkeyup = () => {
-  };
-
   nameErrorContainer.innerHTML = "";
   subjectErrorContainer.innerHTML = "";
   emailErrorContainer.innerHTML = "";
