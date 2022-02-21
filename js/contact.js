@@ -16,17 +16,21 @@ form.addEventListener("submit", function (event) {
   emailErrorContainer.innerHTML = "";
   addressErrorContainer.innerHTML = "";
 
+  if (!checkLength(name.value, 0)) {
+    nameErrorContainer.innerHTML = displayValidationMessage("validation-error", "Name is required")
+  }
+  if (!checkLength(subject.value, 9)) {
+    subjectErrorContainer.innerHTML = displayValidationMessage("validation-error", "Subject is too short")
+  }
+  if (!validateEmail(email.value)) {
+    emailErrorContainer.innerHTML = displayValidationMessage("validation-error", "Email is not valid")
+  }
+  if (!checkLength(address.value, 24)) {
+    addressErrorContainer.innerHTML = displayValidationMessage("validation-error", "Address is too short")
+  }
   if (checkLength(name.value, 0) && checkLength(subject.value, 9) && validateEmail(email.value) && checkLength(address.value, 24)) {
     document.querySelector("form .success-container").innerHTML = displayValidationMessage();
     form.reset()
-  } else if (!checkLength(name.value, 0)) {
-    nameErrorContainer.innerHTML = displayValidationMessage("validation-error", "Name is required")
-  } else if (!checkLength(subject.value, 9)) {
-    subjectErrorContainer.innerHTML = displayValidationMessage("validation-error", "Subject is too short")
-  } else if (!validateEmail(email.value)) {
-    emailErrorContainer.innerHTML = displayValidationMessage("validation-error", "Email is invalid")
-  } else if (!checkLength(address.value, 24)) {
-    addressErrorContainer.innerHTML = displayValidationMessage("validation-error", "Address is too short")
   }
 })
 
