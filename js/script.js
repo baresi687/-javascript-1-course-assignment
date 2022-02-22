@@ -1,21 +1,27 @@
 const resultContainer = document.querySelector(".results");
-const url = "https://swapi.dev/api/films/"
+const corsFix = "https://noroffcors.herokuapp.com/"
+const url = corsFix + "https://www.fishwatch.gov/api/species/";
 
-async function getMovies() {
+async function getAPIresultsToLoop() {
   try {
     const response = await fetch(url);
-    const resultJSON = await response.json()
-    const results = resultJSON.results;
+    const results = await response.json()
 
-    for (let i = 0; i < results.length; i++) {
-      const episodeIdUrl = results[i].url;
-      const episodeId = episodeIdUrl.slice(28, 29);
+    document.querySelector("h1").innerHTML = "Fishwatch stocks"
 
-      resultContainer.innerHTML += `<a class="movie-cards" href="./details.html?id=${episodeId}">
-                                      <div class="movies">
-                                        <h2>${results[i].title}</h2>                                      
-                                        <p>Episode: ${results[i].episode_id}</p>
-                                        <p>Released: ${results[i].release_date}</p>
+    for (let i = 0; i <= 30; i++) {
+      const fishIdString = results[i].Path;
+      const fishId = fishIdString.slice(10);
+
+      if (!results[i].Population) {
+        continue;
+      }
+
+      resultContainer.innerHTML += `<a class="object-cards" href="./details.html?id=${fishId}">
+                                      <div class="objects">
+                                        <h2>${results[i]["Species Name"]}</h2>                            
+                                        <p><span class="description">Region: </span>${results[i]["NOAA Fisheries Region"]}</p>
+                                        <p><span class="description">Quote: </span>${results[i].Quote}</p>
                                       </div>
                                     </a> `
     }
@@ -26,4 +32,4 @@ async function getMovies() {
   }
 }
 
-getMovies();
+getAPIresultsToLoop()
