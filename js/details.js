@@ -1,7 +1,7 @@
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-const url = "https://imdb-api.com/en/API/Title/k_gcm4qbt6/" + id;
+const url = "https://swapi.dev/api/films/" + id;
 const singleResultsContainer = document.querySelector(".single-results");
 
 async function getSingleMovie() {
@@ -12,13 +12,12 @@ async function getSingleMovie() {
     document.querySelector("title").innerHTML = result.title;
 
     singleResultsContainer.innerHTML += `<div class="single-movie">
-                                           <h1>${result.fullTitle}</h1>
-                                           <div class="movie-description">
-                                             <img src="${result.image}" alt="Movie poster"/>
+                                           <h1>${result.title}</h1>
+                                           <div class="movie-description">                               
                                              <div>
-                                               <p><span class="bold">Genre: </span>${result.genres}</p>
-                                               <p><span class="bold">Plot: </span>${result.plot}</p>
-                                               <p><span class="bold">Director: </span>${result.directors}</p>
+                                               <p><span class="bold">Opening crawl: </span>${result.opening_crawl}</p>
+                                               <p><span class="bold">Director: </span>${result.director}</p>
+                                               <p><span class="bold">Producer: </span>${result.producer}</p>
                                              </div>
                                            </div>
                                          </div>`
