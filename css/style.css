@@ -70,8 +70,11 @@ a:hover {
   color: #e8eaed;
 }
 
-.objects p:hover {
-  text-decoration: none;
+.pagination {
+  display: flex;
+  gap: 20px;
+  width: 250px;
+  margin: auto;
 }
 
 img {
@@ -170,6 +173,10 @@ button {
   color: #202124;
   font-weight: 700;
   cursor: pointer;
+}
+
+button:disabled {
+  background-color: #303134;
 }
 
 button:hover {

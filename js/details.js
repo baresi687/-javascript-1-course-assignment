@@ -10,7 +10,7 @@ async function getSingleApiObject() {
     const response = await fetch(url);
     const resultJSON = await response.json();
     const result = resultJSON[0];
-
+    
     document.querySelector("title").innerHTML = result["Species Name"];
 
     singleResultsContainer.innerHTML += `<div class="single-object">
