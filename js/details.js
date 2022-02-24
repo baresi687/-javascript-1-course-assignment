@@ -16,20 +16,49 @@ async function getSingleMovie() {
                                              <img src="${result.image}" alt="Movie poster"/>
                                              <div>
                                                <p><span class="description">Genre: </span>${result.genres}</p>
-                                               <p><span class="description">Plot: </span>${result.plot}</p>
-                                               <div class="movie-cast"><span class="description">Cast: </span></div>
+                                               <p><span class="description">Plot: </span>${result.plot}</p>                                                                                              
                                                <p><span class="description">Director: </span>${result.directors}</p>
+                                               <div class="movie-cast"><span class="description">Cast: </span></div>
+                                               <div class="cast-img"></div>
                                              </div>
                                            </div>
                                          </div>`
 
     const movieCast = document.querySelector(".movie-cast");
+    const castImg = document.querySelector(".cast-img");
     const castList = result.starList;
+    const castIdImg = result.actorList
     let castListString = "";
+
     castList.forEach((item) => {
-      castListString += `<a>${item.name}</a>, `
+      castListString += `<a class="${item.id}">${item.name}</a>, `;
+      for (let i = 0; i < castIdImg.length; i++) {
+        if (item.id === castIdImg[i].id) {
+          castImg.innerHTML += `<img class="id-img ${item.id}" src="${castIdImg[i].image}" alt="Photo of actor">`
+        }
+      }
     })
     movieCast.innerHTML += castListString.slice(0, castListString.length - 2);
+
+    const castHoverAdisplayImg = document.querySelectorAll(".movie-cast a");
+    const idImg = document.querySelectorAll(".id-img")
+    console.log(idImg)
+
+    castHoverAdisplayImg.forEach((aElem) => {
+      aElem.addEventListener("mouseover", function () {
+        idImg.forEach((item) => {
+          if (item.classList[1] === aElem.classList[0]) {
+            item.style.display = "inline-block";
+          }
+        })
+      })
+
+      aElem.addEventListener("mouseout", function () {
+        document.querySelectorAll(".id-img").forEach((item) => {
+          item.style.display = "none";
+        })
+      })
+    })
 
   } catch (error) {
     singleResultsContainer.innerHTML += displayError("error", error);
