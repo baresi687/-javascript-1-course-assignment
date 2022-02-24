@@ -9,7 +9,7 @@ async function getAPIresultsToLoop(itemStart, itemStop) {
   try {
     const response = await fetch(url);
     const results = await response.json()
-    console.log(results.length)
+
     document.querySelector("h1").innerHTML = "Fishwatch stocks";
 
     for (itemStart; itemStart < itemStop; itemStart++) {
