@@ -24,8 +24,8 @@ async function getSingleMovie() {
                                            </div>
                                          </div>`
 
-    const movieCast = document.querySelector(".movie-cast");
-    const castImg = document.querySelector(".cast-img");
+    const movieCastDiv = document.querySelector(".movie-cast");
+    const castImgDiv = document.querySelector(".cast-img");
     const castList = result.starList;
     const castIdImg = result.actorList
     let castListString = "";
@@ -34,17 +34,16 @@ async function getSingleMovie() {
       castListString += `<a class="${item.id}">${item.name}</a>, `;
       for (let i = 0; i < castIdImg.length; i++) {
         if (item.id === castIdImg[i].id) {
-          castImg.innerHTML += `<img class="id-img ${item.id}" src="${castIdImg[i].image}" alt="Photo of actor">`
+          castImgDiv.innerHTML += `<img class="id-img ${item.id}" src="${castIdImg[i].image}" alt="Photo of actor">`
         }
       }
     })
-    movieCast.innerHTML += castListString.slice(0, castListString.length - 2);
+    movieCastDiv.innerHTML += castListString.slice(0, castListString.length - 2);
 
-    const castHoverAdisplayImg = document.querySelectorAll(".movie-cast a");
+    const movieCastAnchor = document.querySelectorAll(".movie-cast a");
     const idImg = document.querySelectorAll(".id-img")
-    console.log(idImg)
 
-    castHoverAdisplayImg.forEach((aElem) => {
+    movieCastAnchor.forEach((aElem) => {
       aElem.addEventListener("mouseover", function () {
         idImg.forEach((item) => {
           if (item.classList[1] === aElem.classList[0]) {
@@ -52,7 +51,6 @@ async function getSingleMovie() {
           }
         })
       })
-
       aElem.addEventListener("mouseout", function () {
         document.querySelectorAll(".id-img").forEach((item) => {
           item.style.display = "none";
