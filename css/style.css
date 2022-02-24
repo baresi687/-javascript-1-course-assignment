@@ -66,6 +66,10 @@ a:hover {
   margin-top: 0;
 }
 
+.item-detail-missing {
+  color: #c9646a;
+}
+
 .objects p {
   color: #e8eaed;
 }

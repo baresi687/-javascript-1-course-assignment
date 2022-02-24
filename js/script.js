@@ -1,31 +1,34 @@
 const resultContainer = document.querySelector(".results");
 const corsFix = "https://noroffcors.herokuapp.com/"
-const url = corsFix + "https://www.fishwatch.gov/api/species";
+const url = corsFix + "https://www.fishwatch.gov/api/species/";
 
-let pages = 0;
-let loopPage = 9;
+let itemStart = 0;
+let itemStop = 9;
 
-async function getAPIresultsToLoop(pages, loopPage) {
+async function getAPIresultsToLoop(itemStart, itemStop) {
   try {
     const response = await fetch(url);
     const results = await response.json()
-
+    console.log(results.length)
     document.querySelector("h1").innerHTML = "Fishwatch stocks";
 
-    for (pages; pages < loopPage; pages++) {
-      const fishIdString = results[pages].Path;
-      const fishId = fishIdString.slice(10);
-
-      if (loopPage >= results.length) {
+    for (itemStart; itemStart < itemStop; itemStart++) {
+      prevBtn.disabled = itemStart < 9;
+      if (itemStart >= results.length) {
         nextBtn.disabled = true;
         break;
+      } else {
+        nextBtn.disabled = false;
       }
+
+      const fishIdString = results[itemStart].Path;
+      const fishId = fishIdString.slice(10);
 
       resultContainer.innerHTML += `<a class="object-cards" href="./details.html?id=${fishId}">
                                       <div class="objects">
-                                        <h2>${results[pages]["Species Name"]}</h2>                        
-                                        <p><span class="description">Region: </span>${results[pages]["NOAA Fisheries Region"]}</p>
-                                        <p><span class="description">Quote: </span>${results[pages].Quote}</p>
+                                        <h2>${results[itemStart]["Species Name"]}</h2>                        
+                                        <p><span class="description">Region: </span>${results[itemStart]["NOAA Fisheries Region"]}</p>
+                                        <p><span class="description">Quote: </span>${results[itemStart].Quote}</p>
                                       </div>
                                     </a> `
     }
@@ -36,30 +39,25 @@ async function getAPIresultsToLoop(pages, loopPage) {
   }
 }
 
-getAPIresultsToLoop(pages, loopPage);
+getAPIresultsToLoop(itemStart, itemStop);
 
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
 
 nextBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  pages += 9;
-  loopPage += 9;
+  itemStart += 9;
+  itemStop += 9;
   resultContainer.innerHTML = "";
   document.querySelector(".loader").style.display = "block";
-  getAPIresultsToLoop(pages, loopPage);
-  prevBtn.disabled = pages < 8;
+  getAPIresultsToLoop(itemStart, itemStop);
 })
 
 prevBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  if (pages > 0 || loopPage > 9) {
-    pages -= 9;
-    loopPage -= 9;
-    resultContainer.innerHTML = "";
-    document.querySelector(".loader").style.display = "block";
-    getAPIresultsToLoop(pages, loopPage);
-    prevBtn.disabled = pages < 8;
-    nextBtn.disabled = pages >= 115;
-  }
+  itemStart -= 9;
+  itemStop -= 9;
+  resultContainer.innerHTML = "";
+  document.querySelector(".loader").style.display = "block";
+  getAPIresultsToLoop(itemStart, itemStop);
 })

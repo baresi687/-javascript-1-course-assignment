@@ -10,7 +10,11 @@ async function getSingleApiObject() {
     const response = await fetch(url);
     const resultJSON = await response.json();
     const result = resultJSON[0];
-    
+
+    if (typeof result === "undefined") {
+      singleResultsContainer.innerHTML += `<h2 class="item-detail-missing">Fish stock single item missing from API</h2>`
+    }
+
     document.querySelector("title").innerHTML = result["Species Name"];
 
     singleResultsContainer.innerHTML += `<div class="single-object">
