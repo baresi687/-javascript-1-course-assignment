@@ -44,8 +44,7 @@ getAPIresultsToLoop(itemStart, itemStop);
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
 
-nextBtn.addEventListener("click", function (event) {
-  event.preventDefault();
+nextBtn.addEventListener("click", function () {
   itemStart += 9;
   itemStop += 9;
   resultContainer.innerHTML = "";
@@ -53,8 +52,7 @@ nextBtn.addEventListener("click", function (event) {
   getAPIresultsToLoop(itemStart, itemStop);
 })
 
-prevBtn.addEventListener("click", function (event) {
-  event.preventDefault();
+prevBtn.addEventListener("click", function () {
   itemStart -= 9;
   itemStop -= 9;
   resultContainer.innerHTML = "";

@@ -11,8 +11,12 @@ async function getSingleApiObject() {
     const resultJSON = await response.json();
     const result = resultJSON[0];
 
-    if (typeof result === "undefined") {
-      singleResultsContainer.innerHTML += `<h2 class="item-detail-missing">Fish stock single item missing from API</h2>`
+    if (!result) {
+      singleResultsContainer.innerHTML += `<h2 class="item-detail-missing">
+                                             Fish stock single item missing from API.<br>
+                                             Only present in <a href="https://www.fishwatch.gov/api/species">end point with all Fish Stocks</a><br>
+                                             <a href="https://www.fishwatch.gov/developers">https://www.fishwatch.gov/developers</a>
+                                           </h2>`
     }
 
     document.querySelector("title").innerHTML = result["Species Name"];
