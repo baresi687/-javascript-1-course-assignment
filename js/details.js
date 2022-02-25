@@ -14,9 +14,9 @@ async function getSingleMovie() {
                                            <h1>${result.fullTitle}</h1>
                                            <div class="movie-description">
                                              <img src="${result.image}" alt="Movie poster"/>
-                                             <div>
+                                             <div class="column-2">
                                                <p><span class="description">Genre: </span>${result.genres}</p>
-                                               <p><span class="description">Plot: </span>${result.plot}</p>                                                                                              
+                                               <p class="plot"><span class="description">Plot: </span>${result.plot}</p>                                                                                              
                                                <p><span class="description">Director: </span>${result.directors}</p>
                                                <div class="movie-cast"><span class="description">Cast: </span></div>
                                                <div class="cast-img"></div>

@@ -71,13 +71,20 @@ a:hover {
 }
 
 img {
-  width: 30%;
-  height: 30%;
+  width: auto;
+  height: auto;
 }
 
 .movie-description {
   display: flex;
   gap: 30px;
+  height: 500px;
+}
+
+.movie-description .column-2 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .description {
@@ -92,18 +99,24 @@ img {
   font-weight: 300;
 }
 
+.plot {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .cast-img {
+  height: inherit;
   margin-top: 20px;
   position: relative;
 }
 
 .id-img {
+  display: none;
   position: absolute;
   bottom: 0;
-  display: none;
   border-radius: 5px;
   width: auto;
-  height: 140px;
+  height: 100%;
   margin-right: 20px;
 }
 
