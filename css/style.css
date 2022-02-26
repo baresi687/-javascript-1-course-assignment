@@ -101,7 +101,11 @@ img {
 
 .plot {
   overflow: hidden;
-  text-overflow: ellipsis;
+  height: 170px;
+}
+
+.movie-cast {
+  margin: 16px 0;
 }
 
 .cast-img {
