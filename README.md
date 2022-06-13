@@ -1,26 +1,52 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7072963&assignment_repo_type=AssignmentRepo)
-<img src="./.readme/noroff-light.png" width="160" align="right">
+# JavaScript 1 Course Assignment
 
-# ABC - Assignment X
+## Description
 
-## Brief
+### Brief
 
-- Insert copy
-- Insert copy
-- Insert copy
+In this assignment my task was to to find a public free-to-use API.
 
-## Level 1 Process
+Make two calls to it:
+1. To fetch an array of results
+2. To fetch a single result using an id, name, or other property.
 
-- Insert copy
-- Insert copy
-- Insert copy
+Both API calls should include a loading indicator and catch any errors and display a message on the page if an error occurs.
 
-## Level 2 Process
+There are two branches with two different API's.
+- main has a film themed API
+- another-api has a fish themed API with pagination 
 
-- Insert copy
-- Insert copy
-- Insert copy
+### index.html
 
-## Submission
+- Loop through the results and create HTML for each result. 
+- Display at least 3 different properties inside the HTML for each result.
+- Link each result to a details.html page and to pass a parameter in the query string to that page.
 
-- Insert copy
+### details.html
+
+- Retrieve the id, name or other parameter from the query string.
+- Add the parameter to the API URL in the format the API requires.
+- Make an API call using the URL I created.
+- Display at least 3 different properties from the received JSON on this page.
+- Set the title of the HTML page to be one of the property values, like name, title or another relevant property.
+
+### contact.html
+
+Create a form with the following inputs and validation rules.
+   - Name - required
+   - Subject - must have a value with a minimum length of 10
+   - Email - must have a value and be formatted like an email address
+   - Address - must have a value with a minimum length of 25
+
+When the form on this page is submitted, write code to validate the input. If any of the inputs fail validation display an error message for the relevant input.
+
+
+## Built With
+
+- HTML
+- CSS
+- JavaScript
+
+## Contact
+
+[My LinkedIn page](https://www.linkedin.com/in/hreinn-gylfason-b9a48521a/)
